@@ -31,9 +31,14 @@ return packer.startup(function(use)
   -- packer can manage itself
   use("wbthomason/packer.nvim")
 
+  use("machakann/vim-highlightedyank") -- highlighted yank
+
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
   use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+
+  -- using packer.nvim
+  use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" }) -- Make tabs look better
 
   --Color scheme
   use("https://github.com/sainnhe/edge.git")
@@ -43,9 +48,13 @@ return packer.startup(function(use)
 
   use("szw/vim-maximizer") -- maximizes and restores current window
 
+  use("ThePrimeagen/harpoon")
+
   -- essential plugins
   use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
   use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
+
+  use("xiyaowong/nvim-transparent") -- transparency
 
   -- commenting with gc
   use("numToStr/Comment.nvim")
@@ -79,7 +88,7 @@ return packer.startup(function(use)
 
   -- configuring lsp servers
   use("neovim/nvim-lspconfig") -- easily configure language servers
-  -- use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
+  use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
   use({
     "glepnir/lspsaga.nvim",
     branch = "main",

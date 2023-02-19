@@ -1,16 +1,10 @@
 -- set colorscheme to nightfly with protected call
 -- in case it isn't installed
 
--- local status, _ = pcall(vim.cmd, "colorscheme edge")
--- if not status then
---   print("Colorscheme not found!") -- print error if colorscheme not installed
---   return
--- end
-
 require("onedark").setup({
   -- Main options --
   style = "darker", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-  transparent = "false", -- Show/hide background
+  transparent = true, -- Show/hide background
   term_colors = true, -- Change terminal color as per the selected theme style
   ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
   cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
@@ -32,7 +26,7 @@ require("onedark").setup({
 
   -- Lualine options --
   lualine = {
-    transparent = false, -- lualine center bar transparency
+    transparent = true, -- lualine center bar transparency
   },
 
   -- Custom Highlights --
@@ -48,3 +42,9 @@ require("onedark").setup({
 })
 
 require("onedark").load()
+
+-- local status, _ = pcall(vim.cmd, "colorscheme edge")
+-- if not status then
+--   print("Colorscheme not found!") -- print error if colorscheme not installed
+--   return
+-- end

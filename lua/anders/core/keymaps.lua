@@ -24,7 +24,7 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 --greatest remap ever
--- vim.keymap.set("x", "<leader>p", '"_DP')
+vim.keymap.set("x", "<leader>p", '"_DP')
 
 -- Go to end or beginning of line
 vim.keymap.set("i", "<C-b>", "<ESC>^i")
@@ -32,7 +32,7 @@ vim.keymap.set("i", "<C-e>", "<end>")
 
 -- Navigate in insert mode
 vim.keymap.set("i", "<C-k>", "<Up>")
-vim.keymap.set("i", "<C-j", "<Down>")
+vim.keymap.set("i", "<C-j>", "<Down>")
 vim.keymap.set("i", "<C-h>", "<Left>")
 vim.keymap.set("i", "<C-l>", "<Right>")
 
@@ -77,9 +77,6 @@ keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>")
 keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>")
 
 --ChatGPT
-
--- keymap.set("n", "<leader>ci", ":ChatGPTEditWithInstructions<cr>")
--- keymap.set("n", "<leader>cc", ":ChatGPT<cr>")
 
 -- LspSaga
 
