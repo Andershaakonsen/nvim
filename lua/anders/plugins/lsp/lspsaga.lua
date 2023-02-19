@@ -1,19 +1,20 @@
 -- import lspsaga safely
 local saga_status, saga = pcall(require, "lspsaga")
 if not saga_status then
-  return
+	return
 end
 
+-- LSP Saga is a plugin for neovim that provides a bunch of handy features for LSP clients.
 saga.setup({
-  -- keybinds for navigation in lspsaga window
-  scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
-  -- use enter to open file with definition preview
-  definition = {
-    edit = "<CR>",
-  },
-  ui = {
-    colors = {
-      normal_bg = "#022746",
-    },
-  },
+	-- keybinds for navigation in lspsaga window
+	scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
+	-- use enter to open file with definition preview
+	definition = {
+		edit = "<CR>",
+	},
+	ui = {
+		colors = {
+			normal_bg = "#022746",
+		},
+	},
 })
