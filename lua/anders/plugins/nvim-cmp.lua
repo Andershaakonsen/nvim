@@ -51,6 +51,8 @@ cmp.setup({
       ellipsis_char = "...",
     }),
   },
+  -- window = {
+  --   completion = cmp.config.window.bordered(),
+  --   documentation = cmp.config.window.bordered(),
+  -- },
 })
-
-vim.opt.pumblend = 15

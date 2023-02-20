@@ -43,6 +43,7 @@ return packer.startup(function(use)
   --Color scheme
   use("https://github.com/sainnhe/edge.git")
   use("navarasu/onedark.nvim")
+  use("folke/tokyonight.nvim")
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 

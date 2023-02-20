@@ -17,3 +17,9 @@ require("anders.plugins.gitsigns")
 require("anders.plugins.transparent")
 require("anders.plugins.bufferline")
 require("anders.plugins.harpoon")
+
+-- wndow transparancy
+vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
+vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+vim.api.nvim_set_hl(0, "PMenu", { link = "Normal" })
+vim.api.nvim_set_hl(0, "NormalNC", { link = "Normal" })
