@@ -35,15 +35,16 @@ return packer.startup(function(use)
 
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
-  use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
-
   -- using packer.nvim
   use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" }) -- Make tabs look better
 
   --Color scheme
-  use("https://github.com/sainnhe/edge.git")
+  -- use("https://github.com/sainnhe/edge.git")
   use("navarasu/onedark.nvim")
-  use("folke/tokyonight.nvim")
+  -- use("folke/tokyonight.nvim")
+  -- use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+  -- use({ "catppuccin/nvim", as = "catppuccin" })
+  -- use("Mofiqul/dracula.nvim")
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -51,11 +52,12 @@ return packer.startup(function(use)
 
   use("ThePrimeagen/harpoon")
 
+  -- line indentation
+  use("lukas-reineke/indent-blankline.nvim")
+
   -- essential plugins
   use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
   use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
-
-  use("xiyaowong/nvim-transparent") -- transparency
 
   -- commenting with gc
   use("numToStr/Comment.nvim")
@@ -68,6 +70,15 @@ return packer.startup(function(use)
 
   -- statusline
   use("nvim-lualine/lualine.nvim")
+
+  -- Todo plugin
+  use({
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup()
+    end,
+  })
 
   -- fuzzy finding w/ telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
@@ -136,4 +147,17 @@ return packer.startup(function(use)
   if packer_bootstrap then
     require("packer").sync()
   end
+
+  -- startup screen
+  use({
+    "goolord/alpha-nvim",
+    requires = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("alpha").setup(require("alpha.themes.startify").config)
+    end,
+  })
+  -- disabled configs
+  -- use("xiyaowong/nvim-transparent") -- transparency
+  -- -- commenting in jsx
+  -- use("JoosepAlviste/nvim-ts-context-commentstring")
 end)

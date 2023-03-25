@@ -3,12 +3,14 @@ local opt = vim.opt -- for conciseness
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
+opt.nu = true
 
 -- tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
 opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
+opt.swapfile = false
 
 -- line wrapping
 opt.wrap = false -- disable line wrapping
@@ -29,7 +31,7 @@ opt.background = "dark" -- colorschemes that can be light or dark will be made d
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 
 -- Turn of lspsaga border
---highlight! link FloatBorder Normal highlight! link NormalFloat Normal
+-- highlight! link FloatBorder Normal highlight! link NormalFloat Normal
 
 -- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position

@@ -25,11 +25,13 @@ telescope.setup({
     "node_modules",
     "^node_modules/*",
     "node_modules/*",
-    "/pack/github",
     "pack/github",
-    "^pack/github/*",
-    "pack/github/*",
-    "./pack/github/*",
+    -- "/pack/github",
+    -- "^pack/github/*",
+    -- "pack/github/*",
+    -- "./pack/github/*",
+    -- "./pack/github/*",
+    -- "../../../pack/github/*",
   },
 })
 

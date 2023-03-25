@@ -62,7 +62,12 @@ lspconfig["html"].setup({
   on_attach = on_attach,
 })
 
-lspconfig["omnisharp"].setup({
+-- lspconfig["omnisharp"].setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+-- })
+
+lspconfig["csharp_ls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })

@@ -14,11 +14,11 @@ require("anders.plugins.lsp.null-ls")
 require("anders.plugins.autopairs")
 require("anders.plugins.treesitter")
 require("anders.plugins.gitsigns")
-require("anders.plugins.transparent")
 require("anders.plugins.bufferline")
 require("anders.plugins.harpoon")
+require("anders.plugins.indent-blankline")
 
--- wndow transparancy
+-- -- wndow transparancy
 vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
 vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 vim.api.nvim_set_hl(0, "PMenu", { link = "Normal" })
