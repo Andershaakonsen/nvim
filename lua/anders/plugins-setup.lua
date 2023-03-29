@@ -43,17 +43,22 @@ return packer.startup(function(use)
   use("navarasu/onedark.nvim")
   -- use("folke/tokyonight.nvim")
   -- use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
-  -- use({ "catppuccin/nvim", as = "catppuccin" })
-  -- use("Mofiqul/dracula.nvim")
+  use({ "catppuccin/nvim", as = "catppuccin" })
+  use("Mofiqul/dracula.nvim")
+  use({ "rose-pine/neovim", as = "rose-pine" })
+  --
+  use("ayu-theme/ayu-vim")
+  use("marko-cerovac/material.nvim")
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
   use("szw/vim-maximizer") -- maximizes and restores current window
 
   use("ThePrimeagen/harpoon")
+  use("ThePrimeagen/vim-be-good")
 
   -- line indentation
-  use("lukas-reineke/indent-blankline.nvim")
+  -- use("lukas-reineke/indent-blankline.nvim")
 
   -- essential plugins
   use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
@@ -64,6 +69,9 @@ return packer.startup(function(use)
 
   -- file explorer
   use("nvim-tree/nvim-tree.lua")
+
+  -- Code Runner
+  use({ "michaelb/sniprun", run = "bash ./install.sh" })
 
   -- vs-code like icons
   use("nvim-tree/nvim-web-devicons")

@@ -20,18 +20,20 @@ telescope.setup({
       },
     },
   },
+
   file_ignore_patterns = {
     "./node_modules/*",
     "node_modules",
     "^node_modules/*",
     "node_modules/*",
     "pack/github",
-    -- "/pack/github",
-    -- "^pack/github/*",
-    -- "pack/github/*",
-    -- "./pack/github/*",
-    -- "./pack/github/*",
-    -- "../../../pack/github/*",
+    "github",
+    "/pack/github",
+    "^pack/github/*",
+    "pack/github/*",
+    "./pack/github/*",
+    "./pack/github/*",
+    "../../../pack/github/*",
   },
 })
 

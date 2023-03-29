@@ -23,6 +23,7 @@ require("onedark").setup({
     strings = "none",
     variables = "none",
   },
+  --an
 
   -- Lualine options --
   lualine = {

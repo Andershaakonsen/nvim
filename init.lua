@@ -17,9 +17,14 @@ require("anders.plugins.gitsigns")
 require("anders.plugins.bufferline")
 require("anders.plugins.harpoon")
 require("anders.plugins.indent-blankline")
+require("anders.plugins.omnisharp")
 
 -- -- wndow transparancy
 vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
 vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 vim.api.nvim_set_hl(0, "PMenu", { link = "Normal" })
 vim.api.nvim_set_hl(0, "NormalNC", { link = "Normal" })
+
+-- Set linenumber color
+vim.api.nvim_command("highlight CursorLineNr guifg=#ffffff")
+vim.api.nvim_command("highlight LineNr guifg=#a1a3a0")
