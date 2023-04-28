@@ -13,8 +13,7 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 -- autocommand that reloads neovim and installs/updates/removes plugins
 -- when file is saved
-vim.cmd([[ 
-  augroup packer_user_config
+vim.cmd([[ augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
   augroup end
@@ -41,16 +40,24 @@ return packer.startup(function(use)
   --Color scheme
   -- use("https://github.com/sainnhe/edge.git")
   use("navarasu/onedark.nvim")
+
   -- use("folke/tokyonight.nvim")
   -- use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
   use({ "catppuccin/nvim", as = "catppuccin" })
   use("Mofiqul/dracula.nvim")
   use({ "rose-pine/neovim", as = "rose-pine" })
-  --
-  use("ayu-theme/ayu-vim")
-  use("marko-cerovac/material.nvim")
+  use("rebelot/kanagawa.nvim")
+  use("ellisonleao/gruvbox.nvim")
+  use("Shatur/neovim-ayu")
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
+
+  use({
+    "Fildo7525/pretty_hover",
+    config = function()
+      require("pretty_hover").setup(options)
+    end,
+  })
 
   use("szw/vim-maximizer") -- maximizes and restores current window
 
@@ -133,6 +140,7 @@ return packer.startup(function(use)
     end,
   })
 
+  use("nvim-treesitter/nvim-treesitter-context")
   -- Lua pretty diagonostics
   use({
     "folke/trouble.nvim",

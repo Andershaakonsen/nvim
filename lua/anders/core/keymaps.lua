@@ -72,9 +72,10 @@ keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 keymap.set("n", "<leader>td", "<cmd>TodoQuickFix<cr>")
 vim.g.copilot_no_tab_map = true
+
+-- Copilot
 vim.api.nvim_set_keymap("n", "<S-tab>", 'copilot#Accept("<C-n>")', { silent = true, expr = true })
 vim.api.nvim_set_keymap("i", "<S-tab>", 'copilot#Accept("<C-n>")', { silent = true, expr = true })
--- Copilot Status map
 keymap.set("n", "<leader>cs", "<cmd>Copilot panel<cr>")
 keymap.set("n", "<leader>cd", "<cmd>Copilot disable<cr>")
 keymap.set("n", "<leader>ce", "<cmd>Copilot enable<cr>")
