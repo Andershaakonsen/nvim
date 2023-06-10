@@ -49,6 +49,7 @@ return packer.startup(function(use)
   use("rebelot/kanagawa.nvim")
   use("ellisonleao/gruvbox.nvim")
   use("Shatur/neovim-ayu")
+  use({ "Everblush/nvim", as = "everblush" })
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -59,6 +60,16 @@ return packer.startup(function(use)
     end,
   })
 
+  --markdown
+  -- install without yarn or npm
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  })
   use("szw/vim-maximizer") -- maximizes and restores current window
 
   use("ThePrimeagen/harpoon")
