@@ -76,7 +76,7 @@ return packer.startup(function(use)
   use("ThePrimeagen/vim-be-good")
 
   -- line indentation
-  -- use("lukas-reineke/indent-blankline.nvim")
+  use("lukas-reineke/indent-blankline.nvim")
 
   -- essential plugins
   use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
@@ -181,6 +181,12 @@ return packer.startup(function(use)
     requires = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("alpha").setup(require("alpha.themes.startify").config)
+    end,
+  })
+  use({
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").setup()
     end,
   })
   -- disabled configs

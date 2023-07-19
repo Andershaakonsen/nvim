@@ -2,12 +2,15 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 local keymap = vim.keymap -- for conciseness
 keymap.set("i", "jk", "<ESC>")
+keymap.set("i", "kj", "<ESC>")
 
 keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
+-- turning off esc in insert mode
+keymap.set("i", "<ESC>", "")
 --delete single character without copying into register
 keymap.set("n", "x", '"_x')
 

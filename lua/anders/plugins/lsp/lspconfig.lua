@@ -180,6 +180,24 @@ lspconfig["tailwindcss"].setup({
   on_attach = on_attach,
 })
 
+-- configure json server
+lspconfig["jsonls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure prisma server
+lspconfig["prismals"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure kotlin server
+lspconfig["kotlin_language_server"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 -- configure emmet language server
 -- This is the one that enables the tagging!
 
