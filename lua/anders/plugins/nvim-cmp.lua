@@ -16,8 +16,8 @@ if not lspkind_status then
   return
 end
 
--- load vs-code like snippets from plugins (e.g. friendly-snippets)
-require("luasnip/loaders/from_vscode").lazy_load()
+-- -- load vs-code like snippets from plugins (e.g. friendly-snippets)
+-- require("luasnip/loaders/from_vscode").lazy_load()
 
 vim.opt.completeopt = "menu,menuone,noselect"
 cmp.setup({
@@ -31,7 +31,7 @@ cmp.setup({
     ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
+    ["<C-c>"] = cmp.mapping.complete(), -- show completion suggestions
     ["<C-e>"] = cmp.mapping.abort(), -- close completion window
     ["<tab>"] = cmp.mapping.confirm({ select = true }),
   }),
