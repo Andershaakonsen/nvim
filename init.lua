@@ -30,3 +30,4 @@ vim.api.nvim_set_hl(0, "NormalNC", { link = "Normal" })
 vim.api.nvim_command("highlight CursorLineNr guifg=#ffffff")
 vim.api.nvim_command("highlight LineNr guifg=#a1a3a0")
 -- vim.api.nvim_command("highlight LineNr guifg=#4ee9e4")
+-- wndow transparancy
