@@ -26,8 +26,6 @@ treesitter.setup({
     "yaml",
     "html",
     "css",
-    "markdown",
-    "markdown_inline",
     "svelte",
     "lua",
     "dockerfile",

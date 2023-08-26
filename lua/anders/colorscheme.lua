@@ -4,7 +4,7 @@
 require("onedark").setup({
   -- Main options --
   style = "darker", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-  transparent = true, -- Show/hide background
+  transparent = false, -- Show/hide background
   term_colors = true, -- Change terminal color as per the selected theme style
   ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
   cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
@@ -23,11 +23,10 @@ require("onedark").setup({
     strings = "none",
     variables = "none",
   },
-  --an
 
   -- Lualine options --
   lualine = {
-    transparent = false, -- lualine center bar transparency
+    transparent = true, -- lualine center bar transparency
   },
 
   -- Custom Highlights --
@@ -42,4 +41,61 @@ require("onedark").setup({
   },
 })
 
-require("onedark").load()
+-- require("onedark").load()
+require("rose-pine").setup({
+  --- @usage 'auto'|'main'|'moon'|'dawn'
+  variant = "auto",
+  --- @usage 'main'|'moon'|'dawn'
+  dark_variant = "moon",
+  bold_vert_split = true,
+  dim_nc_background = true,
+  disable_background = true,
+  disable_float_background = true,
+  disable_italics = false,
+
+  --- @usage string hex value or named color from rosepinetheme.com/palette
+  groups = {
+    background = "base",
+    background_nc = "_experimental_nc",
+    panel = "surface",
+    panel_nc = "base",
+    border = "highlight_med",
+    comment = "muted",
+    link = "iris",
+    punctuation = "subtle",
+
+    error = "love",
+    hint = "iris",
+    info = "foam",
+    warn = "gold",
+
+    headings = {
+      h1 = "iris",
+      h2 = "foam",
+      h3 = "rose",
+      h4 = "gold",
+      h5 = "pine",
+      h6 = "foam",
+    },
+    -- or set all headings at once
+    -- headings = 'subtle'
+  },
+
+  -- Change specific vim highlight groups
+  -- https://github.com/rose-pine/neovim/wiki/Recipes
+  highlight_groups = {
+    ColorColumn = { bg = "rose" },
+
+    -- Blend colours against the "base" background
+    CursorLine = { bg = "foam", blend = 10 },
+    StatusLine = { fg = "love", bg = "love", blend = 10 },
+
+    -- By default each group adds to the existing config.
+    -- If you only want to set what is written in this config exactly,
+    -- you can set the inherit option:
+    Search = { bg = "gold", inherit = false },
+  },
+})
+
+-- Set colorscheme after options
+vim.cmd("colorscheme onedark")
