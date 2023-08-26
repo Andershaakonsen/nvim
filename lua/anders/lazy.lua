@@ -29,8 +29,12 @@ local plugins = {
   "numToStr/Comment.nvim",
   "nvim-tree/nvim-web-devicons",
   "nvim-lualine/lualine.nvim",
-  "Fildo7525/pretty_hover",
-  "lewis6991/gitsigns.nvim",
+  {
+    "lewis6991/gitsigns.Nvim",
+    config = function()
+      require("gitsigns").setup()
+    end,
+  },
   "nvim-tree/nvim-tree.lua",
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, -- dependency for better sorting performance
   { "nvim-telescope/telescope.nvim", branch = "0.1.x" }, -- fuzzy finder
@@ -63,7 +67,6 @@ local plugins = {
     end,
   },
   "nvim-treesitter/nvim-treesitter-context",
-  "windwp/nvim-autopairs", -- autoclose parens, brackets, quotes, etc...
   { "windwp/nvim-ts-autotag", dependencies = "nvim-treesitter" }, -- autoclose tags
   {
     "folke/todo-comments.nvim",
