@@ -78,4 +78,7 @@ local plugins = {
     },
   },
 }
-require("lazy").setup({ plugins, { import = "anders.plugins" }, { import = "anders.plugins.lsp" } })
+require("lazy").setup(
+  { plugins, { import = "anders.plugins" }, { import = "anders.plugins.lsp" } },
+  { import = "anders.core" }
+)
