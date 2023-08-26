@@ -1,3 +1,7 @@
+local M = {
+  "ThePrimeagen/harpoon",
+}
+
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
@@ -26,3 +30,5 @@ vim.api.nvim_create_autocmd({ "Filetype" }, {
     -- vim.api.nvim_set_hl(0, "HarpoonBorder", { link = "Normal" })
   end,
 })
+
+return M
