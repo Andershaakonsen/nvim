@@ -65,5 +65,14 @@ local plugins = {
   "nvim-treesitter/nvim-treesitter-context",
   "windwp/nvim-autopairs", -- autoclose parens, brackets, quotes, etc...
   { "windwp/nvim-ts-autotag", dependencies = "nvim-treesitter" }, -- autoclose tags
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
 }
 require("lazy").setup({ plugins, { import = "anders.plugins" }, { import = "anders.plugins.lsp" } })

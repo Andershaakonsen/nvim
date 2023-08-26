@@ -1,4 +1,3 @@
-print("Hello from comment")
 return {
   "numToStr/Comment.nvim",
   config = function()

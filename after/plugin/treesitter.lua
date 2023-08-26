@@ -4,8 +4,6 @@ if not status then
   return
 end
 
--- TODO: Checkout context treesitter plugin
-
 -- configure treesitter
 treesitter.setup({
   -- enable syntax highlighting
