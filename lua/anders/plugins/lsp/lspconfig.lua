@@ -141,6 +141,19 @@ return {
       on_attach = on_attach,
       filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
     })
+    -- configure csharp_ls language server
+    lspconfig["csharp_ls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- TODO: Fix omnisharp
+
+    -- -- configure omnisharp language server
+    -- lspconfig["omnisharp"].setup({
+    --   capabilities = capabilities,
+    --   on_attach = on_attach,
+    -- })
 
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup({

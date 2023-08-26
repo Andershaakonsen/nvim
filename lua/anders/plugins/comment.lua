@@ -3,7 +3,6 @@ return {
   config = function()
     -- import safely
     local comment = require("Comment")
-    print(comment)
     comment.setup()
   end,
 }

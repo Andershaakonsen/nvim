@@ -27,6 +27,7 @@ return {
         "svelte",
         "lua_ls",
         "graphql",
+        "omnisharp",
         "emmet_ls",
         "prismals",
       },
