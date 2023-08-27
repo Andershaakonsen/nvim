@@ -1,3 +1,6 @@
+-- LSP client plugin.
+-- This plugin communicate with the language servers.
+-- The LSP client handles sending requests to the server and displaying the server's responses in the editor.
 local M = {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
@@ -144,16 +147,97 @@ M.config = function()
   })
 
   -- configure csharp_ls language server
-  lspconfig["csharp_ls"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-  })
-
-  -- TODO: Fix omnisharp
-  -- configure omnisharp language server
-  -- lspconfig["omnisharp"].setup({
+  -- lspconfig["csharp_ls"].setup({
   --   capabilities = capabilities,
   --   on_attach = on_attach,
+  -- })
+
+  lspconfig["omnisharp"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = { "dotnet", "/Users/andershakonsen/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+  })
+
+  -- lspconfig["omnisharp"].setup({
+  --   cmd = { "dotnet", "/Users/andershakonsen/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+  --   on_attach = function(client, _)
+  --     -- This is a hack that is needed with omnisharp in it's current state. This the result of a bug in Rosyln.
+  --     if client.name == "omnisharp" then
+  --       client.server_capabilities.semanticTokensProvider.legend = {
+  --         tokenModifiers = { "static" },
+  --         tokenTypes = {
+  --           "comment",
+  --           "excluded",
+  --           "identifier",
+  --           "keyword",
+  --           "keyword",
+  --           "number",
+  --           "operator",
+  --           "operator",
+  --           "preprocessor",
+  --           "string",
+  --           "whitespace",
+  --           "text",
+  --           "static",
+  --           "preprocessor",
+  --           "punctuation",
+  --           "string",
+  --           "string",
+  --           "class",
+  --           "delegate",
+  --           "enum",
+  --           "interface",
+  --           "module",
+  --           "struct",
+  --           "typeParameter",
+  --           "field",
+  --           "enumMember",
+  --           "constant",
+  --           "local",
+  --           "parameter",
+  --           "method",
+  --           "method",
+  --           "property",
+  --           "event",
+  --           "namespace",
+  --           "label",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "xml",
+  --           "regexp",
+  --           "regexp",
+  --           "regexp",
+  --           "regexp",
+  --           "regexp",
+  --           "regexp",
+  --           "regexp",
+  --           "regexp",
+  --           "regexp",
+  --         },
+  --       }
+  --     end
+  --   end,
+  --   -- root_dir = function(path)
+  --   --   return require("utilities.path_finder.lsp").GetLspRootDir(path)
+  --   -- end,
   -- })
 
   -- configure lua server (with special settings)

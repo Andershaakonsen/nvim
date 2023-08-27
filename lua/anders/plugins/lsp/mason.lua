@@ -1,3 +1,4 @@
+-- Mason easily manage lsps
 return {
   "williamboman/mason.nvim",
   dependencies = {
