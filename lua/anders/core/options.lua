@@ -4,10 +4,11 @@ local opt = vim.opt -- for conciseness
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
 opt.nu = true
+-- opt.encoding = "utf8"
 
 -- tabs & indentation
-opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
-opt.shiftwidth = 2 -- 2 spaces for indent width
+opt.tabstop = 4 -- 4 spaces for tabs (prettier default)
+opt.shiftwidth = 4 -- 4 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.swapfile = false
@@ -45,3 +46,5 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 opt.hlsearch = false -- removes the highlighted search
 opt.iskeyword:append("-") -- consider string-string as whole word
+
+opt.scrolloff = 8 -- Keep 3 lines when scrolling

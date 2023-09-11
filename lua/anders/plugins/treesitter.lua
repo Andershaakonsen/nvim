@@ -1,18 +1,10 @@
--- import nvim-treesitter plugin safely
-local status, treesitter = pcall(require, "nvim-treesitter.configs")
-if not status then
-  return
-end
-
--- TODO: Checkout context treesitter plugin
-
--- configure treesitter
-treesitter.setup({
-  -- enable syntax highlighting
-  highlight = {
-    enable = true,
+return {
+  "nvim-treesitter/nvim-treesitter",
+  opts = {
+    highlight = {
+      enable = true,
+    },
   },
-  -- enable indentation
   indent = { enable = true },
   -- enable autotagging (w/ nvim-ts-autotag plugin)
   autotag = { enable = true },
@@ -21,13 +13,12 @@ treesitter.setup({
     "json",
     "javascript",
     "typescript",
+    "c_sharp",
     "tsx",
     "lua",
     "yaml",
     "html",
     "css",
-    "markdown",
-    "markdown_inline",
     "svelte",
     "lua",
     "dockerfile",
@@ -36,4 +27,4 @@ treesitter.setup({
   },
   -- auto install above language parsers
   auto_install = true,
-})
+}

@@ -92,10 +92,13 @@ keymap.set("v", "<leader>sr", "<cmd>'<,'>:SnipRun<cr>")
 keymap.set("n", "<leader>sc", "<cmd>SnipClose<cr>")
 
 -- LspSaga
-
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 keymap.set("n", "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>") -- Show buffer diagnostics
 
+-- Lazy
+keymap.set("n", "<leader>l", "<cmd>Lazy<CR>")
+
+keymap.set("n", "<leader>wq", "<cmd>wqa<CR>")
 -- LSP finder - Find the symbol's definition
 -- If there is no definition, it will instead be hidden
 -- When you use an action in finder like "open vsplit",
