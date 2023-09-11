@@ -152,11 +152,18 @@ M.config = function()
   --   on_attach = on_attach,
   -- })
 
+  local omnisharp_bin = "/Users/andershakonsen/Code/omnisharp-osx-arm64-net6.0" 
+  local pid = vim.fn.getpid()
+
   lspconfig["omnisharp"].setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    cmd = { "dotnet", "/Users/andershakonsen/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+      cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) }
   })
+  -- lspconfig["omnisharp"].setup({
+  --   on_attach = on_attach,
+  --   capabilities = capabilities,
+  --   -- cmd = { "dotnet", "/Users/andershakonsen/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+  --   cmd = { "dotnet", "/Users/andershakonsen/Code/omnisharp-osx-arm64-net6.0/OmniSharp.dll" },
+  -- })
 
   -- lspconfig["omnisharp"].setup({
   --   cmd = { "dotnet", "/Users/andershakonsen/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },

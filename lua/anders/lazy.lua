@@ -57,15 +57,6 @@ local plugins = {
   }, -- enhanced lsp uis
   "jose-elias-alvarez/typescript.nvim", -- additional functionality for typescript server (e.g. rename file & update imports)
   "onsails/lspkind.nvim", -- vs-code like icons for autocompletion
-  "jose-elias-alvarez/null-ls.nvim", -- configure formatters & linters
-  "jayp0521/mason-null-ls.nvim", -- bridges gap b/w mason & null-ls
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = function()
-      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-      ts_update()
-    end,
-  },
   "nvim-treesitter/nvim-treesitter-context",
   { "windwp/nvim-ts-autotag", dependencies = "nvim-treesitter" }, -- autoclose tags
   {
